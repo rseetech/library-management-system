@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import Home from './Pages/Home';
-import { DefaultLayout } from './Layouts';
+import { ThemeProvider } from '@mui/material';
+import myTheme from './Theming/ThemeProvider';
+import Router from './Services/Router';
 
 function App() {
   return (
-    <div className="App">
-      <DefaultLayout />
-    </div>
+    <>
+      <ThemeProvider theme={myTheme}>
+          <Router />
+      </ThemeProvider>
+    </>
   );
 }
 

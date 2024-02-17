@@ -9,10 +9,8 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import logo from "../../src/Assets/logo.svg";
-import { Typography } from "@mui/material";
-//import "../DefaultLayout/layout.css";
+import { Link, Typography } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -80,26 +78,7 @@ const SideDrawer = ({ open }) => {
       <Divider />
       <Divider />
       <List sx={{ color: "#fff"}}>
-        <ListItem disablePadding sx={{ display: "block" }}>
-          <ListItemButton
-            sx={{
-              minHeight: 48,
-              justifyContent: open ? "initial" : "center",
-              px: 2.5,
-            }}
-          >
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : "auto",
-                justifyContent: "center",
-              }}
-            >
-              <InboxIcon sx={{ color: "#fff"}} />
-            </ListItemIcon>
-            <ListItemText primary="Tabs" sx={{ opacity: open ? 1 : 0 }} />
-          </ListItemButton>
-        </ListItem>
+      <Link href="/">
         <ListItem disablePadding sx={{ display: "block" }}>
           <ListItemButton
             sx={{
@@ -120,6 +99,8 @@ const SideDrawer = ({ open }) => {
             <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
           </ListItemButton>
         </ListItem>
+        </Link>
+        <Link href="contactus">
         <ListItem disablePadding sx={{ display: "block" }}>
           <ListItemButton
             sx={{
@@ -135,11 +116,13 @@ const SideDrawer = ({ open }) => {
                 justifyContent: "center",
               }}
             >
-              <MailIcon sx={{ color: "#fff"}} />
+              <InboxIcon sx={{ color: "#fff"}} />
             </ListItemIcon>
-            <ListItemText primary="Posts" sx={{ opacity: open ? 1 : 0 }} />
+            <ListItemText primary="Contact Us" sx={{ opacity: open ? 1 : 0 }} />
           </ListItemButton>
         </ListItem>
+        </Link>
+        
       </List>
     </Drawer>
   );
